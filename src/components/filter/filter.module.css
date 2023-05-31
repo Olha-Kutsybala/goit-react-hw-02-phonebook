@@ -1,0 +1,16 @@
+.label_filter {
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.input_filter {
+  padding: 8px;
+  border: 1px solid rgba(69, 69, 241, 0.753);
+  border-radius: 4px;
+
+  &:focus-within {
+    outline: none;
+    border-color: blue;
+  }
+}
