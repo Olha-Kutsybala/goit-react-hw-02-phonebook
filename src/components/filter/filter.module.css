@@ -1,6 +1,10 @@
+.filter_container {
+  padding: 0 40px;
+}
+
 .label_filter {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 12px;
 }
 

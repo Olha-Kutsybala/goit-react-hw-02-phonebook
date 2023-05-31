@@ -1,6 +1,6 @@
 .form {
   padding: 0 20px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .label {
@@ -12,7 +12,7 @@
 .input {
   display: block;
   max-width: 440px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   padding: 8px;
   border: 1px solid rgba(69, 69, 241, 0.753);
   border-radius: 4px;
