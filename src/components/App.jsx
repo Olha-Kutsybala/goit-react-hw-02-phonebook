@@ -24,7 +24,6 @@ export class App extends Component {
       name,
       number,
     };
-
     const { contacts } = this.state;
 
     if (contacts.find(contact => contact.number === number)) {
