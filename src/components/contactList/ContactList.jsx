@@ -21,7 +21,7 @@ const ContactList = ({ contacts, onRemoveContact }) => {
     </ul>
   );
 };
-
+//pr
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
