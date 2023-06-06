@@ -17,6 +17,11 @@ class Form extends Component {
     const { name, number } = this.state;
     console.log(`Login: ${name}, Email: ${number}`);
 
+    if (name.trim() === '' || number.trim() === '') {
+      alert("Enter the contact's name and number phone!");
+      return;
+    }
+
     this.props.onSubmit({ ...this.state });
     this.reset();
   };
@@ -38,6 +43,7 @@ class Form extends Component {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+          minLength={2}
           onChange={this.handleChange}
           value={name}
           placeholder="Enter here"

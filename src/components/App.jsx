@@ -14,27 +14,40 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
+    // name: '',
+    // number: '',
   };
 
   addContact = ({ name, number }) => {
+    const { contacts } = this.state;
+
+    const isExist = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (isExist) {
+      alert(`${number} is already in contacts.`);
+      return;
+    }
     const contact = {
       id: nanoid(),
       name,
       number,
     };
-    const { contacts } = this.state;
 
-    if (contacts.find(contact => contact.number === number)) {
-      alert(`${number} is already in contacts.`);
-    } else if (name.trim() === '' || number.trim() === '') {
-      alert("Enter the contact's name and number phone!");
-    } else {
-      this.setState(({ contacts }) => ({
-        contacts: [contact, ...contacts],
-      }));
-    }
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
+
+    // if (contacts.find(contact => contact.number === number)) {
+    //   alert(`${number} is already in contacts.`);
+    // } else if (name.trim() === '' || number.trim() === '') {
+    //   alert("Enter the contact's name and number phone!");
+    // } else {
+    //   this.setState(({ contacts }) => ({
+    //     contacts: [contact, ...contacts],
+    //   }));
+    // }
   };
 
   removeContact = ContId => {
